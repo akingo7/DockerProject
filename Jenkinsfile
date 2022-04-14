@@ -24,14 +24,14 @@ pipeline {
         
         stage ('Check Container') {
             steps {
-                sh 'curl -I localhost:80 | echo grep 200'
+                sh 'curl -I localhost:80'
             }
         }
         
         stage ('Push Image To Registry') {
             steps {
                 script {
-                    if ( 'curl -I localhost:80 | echo grep 20010' ) {
+                    if ( 'curl -I localhost:80 | echo grep 200' ) {
                         sh 'docker push akingo/tooling'
                         }  
                     }
