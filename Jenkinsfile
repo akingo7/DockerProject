@@ -31,7 +31,7 @@ pipeline {
         stage ('Push Image To Registry') {
             steps {
                 script {
-                    if (echo $? == 0) {
+                    if ( `echo $?` == 0 ) {
                         sh 'docker push akingo/tooling '
                         }  
                     }
