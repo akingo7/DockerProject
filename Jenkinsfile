@@ -31,7 +31,7 @@ pipeline {
         stage ('Push Image To Registry') {
             steps {
                 script {
-                    if ( sh 'curl -I localhost:80 | echo grep 200' ) {
+                    if ( 'curl -I localhost:80 | echo grep 200' ) {
                         sh 'docker push akingo/tooling'
                         }  
                     }
