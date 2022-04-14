@@ -24,7 +24,7 @@ pipeline {
         
         stage ('Check Container') {
             steps {
-                sh 'curl -i localhost:80 | echo grep 200 >> test'
+                sh 'curl -i localhost:80 | echo grep 200'
             }
         }
         
