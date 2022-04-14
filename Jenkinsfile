@@ -38,7 +38,9 @@ pipeline {
         }
         
         stage('Delete container') {
-           sh 'docker container rm -f tooling'
+            steps{
+                sh 'docker container rm -f tooling'
+            }
         }
         
 
