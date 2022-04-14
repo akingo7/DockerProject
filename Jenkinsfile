@@ -30,10 +30,11 @@ pipeline {
         
         stage ('Push Image To Registry') {
             steps {
-                when {
-                     triggeredBy 'echo $? == 0'
+                script {
+                    if (echo $? == 0) {
+                        sh 'docker push akingo/tooling '
+                        }  
                     }
-                sh 'docker push akingo/tooling '
             }
         }
         
