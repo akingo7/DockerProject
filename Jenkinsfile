@@ -2,15 +2,15 @@ pipeline {
     agent any
     stages {
 
-        stage () {
+        stage ('Checkout SCM) {
             steps {
-                echo "How are you doing"
+                sh 'ls'
              }
         }
 
         stage () {
             steps {
-                sh 'docker push akingo/tooling'
+                sh 'docker build ./tooling/ -t akingo/tooling'
             }
         }
 
